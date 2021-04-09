@@ -62,6 +62,44 @@ public class CameraMgr : MonoBehaviour
         Debug.LogFormat("{0}:{1}", change.itemText.text,
             change.value);
         // Code will go here
+        switch (change.value)
+        {
+            // Show Camera 1 view only
+            case 0:
+                mainCamera.enabled = true;
+                pictureInPictureCam.enabled = false;
+                SideViewCamera.enabled = false;
+                SplitScreenUpper.enabled = false;
+                SplitScreenLower.enabled = false;
+
+                break;
+            // Show Camera 2 view only
+            case 1:
+                mainCamera.enabled = false;
+                pictureInPictureCam.enabled = false;
+                SideViewCamera.enabled = true;
+                SplitScreenUpper.enabled = false;
+                SplitScreenLower.enabled = false;
+
+                break;
+            // Show Picture In Picture
+            // With main camera enabled
+            case 2:
+                mainCamera.enabled = true;
+                pictureInPictureCam.enabled = true;
+                SideViewCamera.enabled = false;
+                SplitScreenUpper.enabled = false;
+                SplitScreenLower.enabled = false;
+                break;
+            // Show Split Screen
+            case 3:
+                mainCamera.enabled = false;
+                pictureInPictureCam.enabled = false;
+                SideViewCamera.enabled = false;
+                SplitScreenUpper.enabled = true;
+                SplitScreenLower.enabled = true;
+                break;
+        }
 
     }
 
