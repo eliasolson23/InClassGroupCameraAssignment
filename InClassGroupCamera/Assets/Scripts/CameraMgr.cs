@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CameraMgr : MonoBehaviour
 {
-
+//TEST
     /// <summary>    
     /// /// STEP 1. Define the public fields.    
     /// /// Save the file return to Unity     
